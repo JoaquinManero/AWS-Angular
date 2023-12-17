@@ -10,7 +10,14 @@ export class AppService {
   private baseUrl =
     'http://ec2-18-116-13-180.us-east-2.compute.amazonaws.com:3000';
 
+  private baseUrlApi =
+    'http://ec2-18-116-13-180.us-east-2.compute.amazonaws.com:3000/files';
+
   getMessage(): Observable<any> {
     return this.http.get<any>(this.baseUrl);
+  }
+
+  getFiles(): Observable<any> {
+    return this.http.get<any>(this.baseUrlApi);
   }
 }
