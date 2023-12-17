@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class AppService {
   constructor(private readonly http: HttpClient) {}
   private baseUrl =
-    'http://ec2-3-129-89-228.us-east-2.compute.amazonaws.com:3000';
+    'http://ec2-18-116-13-180.us-east-2.compute.amazonaws.com:3000';
 
   getMessage(): Observable<any> {
     return this.http.get<any>(this.baseUrl);
