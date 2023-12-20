@@ -1,4 +1,11 @@
 <div>
   <h1>Hello from frontend!</h1>
   <h4>{{ message }}</h4>
+  <input type="file" (change)="onFileSelected($event)" />
+  <button
+    style="display: flex; flex-direction: column; margin-top: 10px"
+    (click)="onSubmit()"
+  >
+    Enviar a S3
+  </button>
 </div>

@@ -8,6 +8,8 @@ import { AppService } from './services/app.service';
 export class AppComponent implements OnInit {
   public message = '';
   public files: any[] = [];
+  public selectedFile: File | undefined;
+
   constructor(private readonly appService: AppService) {}
 
   ngOnInit(): void {
@@ -19,5 +21,20 @@ export class AppComponent implements OnInit {
       this.files = response;
       console.log('files', this.files);
     });
+  }
+
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0];
+  }
+
+  onSubmit(): void {
+    if (this.selectedFile) {
+      this.appService.postFile(this.selectedFile).subscribe((response) => {
+        console.log('response', response);
+        console.log('Archivo enviado correctamente.');
+      });
+    } else {
+      console.log('No file selected.');
+    }
   }
 }
