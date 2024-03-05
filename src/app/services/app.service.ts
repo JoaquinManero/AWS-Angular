@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class AppService {
   constructor(private readonly http: HttpClient) {}
   private baseUrl =
-    'http://ec2-3-146-221-212.us-east-2.compute.amazonaws.com:3000';
+    'http://ec2-3-20-239-238.us-east-2.compute.amazonaws.com:3000/';
 
   private baseUrlApi =
     'http://ec2-3-146-221-212.us-east-2.compute.amazonaws.com:3000/files';
